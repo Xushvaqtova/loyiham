@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Qo'shish</title>
+</head>
+<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="card shadow p-4">
+    <h3 class="mb-3">➕ Yangi xodim qo‘shish</h3>
+
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="mb-3">
+            <label>Ism</label>
+            <input type="text" name="name" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Lavozim</label>
+            <input type="text" name="position" class="form-control" required>
+        </div>
+
+        <div class="mb-3">
+            <label>Maosh</label>
+            <input type="number" name="salary" class="form-control" required>
+        </div>
+
+        <button class="btn btn-success">Saqlash</button>
+        <a href="/" class="btn btn-secondary">Orqaga</a>
+    </form>
+</div>
+{% endblock %}
+</body>
+</html>
